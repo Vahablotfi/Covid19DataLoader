@@ -19,7 +19,7 @@ public class DataHandler {
             String line = sc.nextLine();
             String[] attributes = line.split(";");
             String region = attributes[0];
-            String aldresGruppe = attributes[1];
+            String aldresGruppe = attributes[1].contains("Oct/19") ? "10-19" : attributes[1];
             int bekræftedeTilfældeIAlt = Integer.parseInt(attributes[2]);
             int indlagtePåICU = Integer.parseInt(attributes[3]);
             int indlagte = Integer.parseInt(attributes[4]);
@@ -33,7 +33,6 @@ public class DataHandler {
 
         sc.close();
         return DataArr;
-
 
     }
 
